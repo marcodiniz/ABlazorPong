@@ -1,0 +1,140 @@
+﻿@font-face {
+    font-family: "Blippo-Black";
+    src: url('assets/blippo-black.woff') format("woff"), url("assets/blippo-black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "bygbv76tgbvftr7vg6ty";
+    src: url('assets/bygbv76tgbvftr7vg6ty.woff') format("woff"), url("assets/bygbv76tgbvftr7vg6ty.ttf") format("truetype");
+}
+
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: gold;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.banner {
+    height: 15%;
+    background: GoldenRod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: Blippo-Black;
+    font-size: 3em;
+}
+
+.social {
+    position: fixed;
+    left: 0;
+}
+
+    .social img {
+        width: 2em;
+    }
+
+.bat, .ball {
+    background: white;
+    position: absolute;
+}
+
+.line {
+    height: 100%;
+    width: 0.2%;
+    margin: auto;
+    background-size: auto auto;
+    /*background-color: transparent;*/
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 10px, white 10px, white 21px);
+}
+
+.scores {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+    .scores div {
+        font-family: bygbv76tgbvftr7vg6ty;
+        font-size: 6em;
+        color: white;
+    }
+
+.screen {
+    position: relative;
+    background: black;
+    align-self: center;
+    width: 110vh;
+    height: 80vh;
+    max-width: 90%;
+    overflow: hidden;
+    border-radius: 40px;
+    box-shadow: 0px 0px 0px 6px #871;
+}
+    /*from http://aleclownes.com/2017/02/01/crt-display.html */
+    .screen::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 2;
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+    }
+
+.screen_logic {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+/*inspired on https://codemyui.com/crt-screen-text-flicker-animation-in-pure-css/ */
+.bar, ball {
+    box-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    animation-duration: 0.01s;
+    animation-name: flicker-box;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flicker-box {
+    from {
+        box-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+
+    to {
+        box-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+.scores {
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    animation-duration: 0.01s;
+    animation-name: flicker-text;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flicker-text {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
