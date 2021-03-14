@@ -1,1 +1,1 @@
-# BlazorPong
+# A Blazor Pong
