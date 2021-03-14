@@ -15,7 +15,10 @@ jobs:
             
         # changes the base-tag in index.html from '/' to 'ABlazorPong' to match GitHub Pages repository subdirectory
         - name: Change base-tag in index.html from / to ABlazorPong
-          run: sed -i 's/<base href="\/" \/>/<base href="\/ABlazorPong\/" \/>/g' release/wwwroot/index.html
+          uses: datamonsters/replace-action@v2
+          with:
+            files: 'release/wwwroot/index.html'
+            replacements: '<base href="\/"\/>,<base href="\/ABlazorPong\/"\/>'
           
         # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
         - name: Add .nojekyll file
