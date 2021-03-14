@@ -13,8 +13,8 @@
     <div class="page">
         <div class="banner">
             <div class="social">
-                <a href="https://www.linkedin.com/in/dinizmarco/"><img src="assets/logo-linkedin.svg"/></a>
-                <a href="https://github.com/marcodiniz/ABlazorPong"><img src="assets/logo-github.svg"/></a>
+                <a href="https://www.linkedin.com/in/dinizmarco/"><img src="assets/logo-linkedin.svg" /></a>
+                <a href="https://github.com/marcodiniz/ABlazorPong"><img src="assets/logo-github.svg" /></a>
             </div>
             <div class="logo">
                 BLAZOR-PONG
@@ -22,11 +22,24 @@
         </div>
         <div class="screen">
             <div id="app">
+                Click on screen, use ↑, ↓, W or S
+                <br />
+                loading...
             </div>
         </div>
     </div>
 
     <script src="_framework/blazor.webassembly.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-617Z7LZK9Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-617Z7LZK9Q');
+    </script>
 </body>
 
 </html>

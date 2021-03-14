@@ -30,7 +30,7 @@
 
 .logo {
     font-family: Blippo-Black;
-    font-size: 3em;
+    font-size: 10vh;
 }
 
 .social {
@@ -42,7 +42,7 @@
         width: 2em;
     }
 
-.bat, .ball {
+.bar, .ball {
     background: white;
     position: absolute;
 }
@@ -103,7 +103,7 @@
 }
 
 /*inspired on https://codemyui.com/crt-screen-text-flicker-animation-in-pure-css/ */
-.bar, ball {
+.bar, .ball {
     box-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
     animation-duration: 0.01s;
     animation-name: flicker-box;
@@ -138,3 +138,17 @@
         text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
     }
 }
+
+#app {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
