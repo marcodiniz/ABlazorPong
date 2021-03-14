@@ -1,0 +1,77 @@
+﻿@page "/"
+
+
+<div class="screen_logic"
+     tabindex="@tabIndex"
+     @onfocusout="_=>StopBar()"
+     @onkeyup="_=>StopBar()"
+     @onkeydown="HandleKeyPress">
+
+    @foreach(var a in audios)
+    {
+        <audio @key=a autoplay src="assets/pong_@(a).wav"></audio>
+    }
+
+    <div class="line"></div>
+
+    <div class="scores">
+        <div>@game.ScoreAI</div>
+        <div>@game.ScorePlayer</div>
+    </div>
+
+    <div class="bat" style="@game.BarLeft.Rect.ToStyle()"></div>
+    <div class="bat" style="@game.BarRight.Rect.ToStyle()"></div>
+
+    <div class="ball" style="@game.Ball.Rect.ToStyle()"></div>
+
+</div>
+
+
+@code {
+    Game game;
+    int tabIndex = 1;
+    List<string> audios = new ();
+
+    protected override void OnInitialized()
+    {
+        game = new Game();
+        game.FrameUpdated += (_, _) => InvokeAsync(StateHasChanged);
+        game.NotifyEvent += (_, evt) =>
+        {
+            audios.Add(evt);
+            Task.Delay(500).ContinueWith(_ => audios.Remove(evt));
+        };
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            tabIndex = 0;
+            game.Start();
+            StateHasChanged();
+        }
+    }
+
+    private void StopBar()
+    {
+        game.BarRight.MoveDirection = 0;
+    }
+    private void HandleKeyPress(KeyboardEventArgs args)
+    {
+        switch (args.Key)
+        {
+            case "ArrowUp" or "w":
+                game.BarRight.MoveDirection = -1;
+                break;
+            case "ArrowDown" or "s":
+                game.BarRight.MoveDirection = 1;
+                break;
+            default:
+                StopBar();
+                break;
+
+        }
+    }
+
+}
