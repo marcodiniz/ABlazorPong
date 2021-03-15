@@ -7,7 +7,8 @@
      @onkeyup="_=>StopBar()"
      @onkeydown="HandleKeyPress">
 
-    @foreach(var a in audios)
+
+    @foreach (var a in audios)
     {
         <audio @key=a autoplay src="assets/pong_@(a).wav"></audio>
     }
@@ -24,13 +25,24 @@
 
     <div class="ball" style="@game.Ball.Rect.ToStyle()"></div>
 
+    <div class="touch-panes">
+        <div class="touch-top"
+             @onmousedown="_=> game.BarRight.MoveDirection = -1"
+             @ontouchstart="_=> game.BarRight.MoveDirection = -1">
+        </div>
+        <div class=" touch-bottom"
+             @onmousedown="_=> game.BarRight.MoveDirection = 1"
+             @ontouchstart="_=> game.BarRight.MoveDirection = 1">
+        </div>
+    </div>
+
 </div>
 
 
 @code {
     Game game;
     int tabIndex = 1;
-    List<string> audios = new ();
+    List<string> audios = new();
 
     protected override void OnInitialized()
     {
