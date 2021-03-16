@@ -55,11 +55,22 @@
 
     .social img {
         width: 5vmin;
+        min-width: 25px;
     }
 
 .bar, .ball {
     background: white;
     position: absolute;
+}
+
+.bar{
+    width: 1.5%;
+    height: 12%;
+}
+
+.ball{
+    width: 2%;
+    height: 2%;
 }
 
 .line {
@@ -89,10 +100,10 @@
     position: relative;
     background: black;
     align-self: center;
-    width: 110vh;
-    height: 80vh;
-    max-width: 90%;
+    width: 80%;
+    height: 75%;
     overflow: hidden;
+    margin: auto;
     border-radius: 40px;
     box-shadow: 0px 0px 0px 6px #871;
 }

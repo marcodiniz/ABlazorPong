@@ -13,8 +13,6 @@
         public float Right => CenterX + Width / 2;
 
         public string ToStyle() => $@"
-width:  {Width}%;
-height: {Heigth}%;
 top:    {Top}%;
 left:   {Left}%;
 ";
