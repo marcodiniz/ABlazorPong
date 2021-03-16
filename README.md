@@ -1,6 +1,6 @@
 # A Blazor Pong
 
-### Live Demo: http://blazorpong.surge.sh
+### Live Demo: https://marcodiniz.github.io/ABlazorPong/
 
 
 ![screenshot](screenshots/pong.gif)
