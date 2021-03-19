@@ -16,13 +16,19 @@ jobs:
     steps:
     - name: install zlib
       run: sudo apt install zlib1g
+      
+    - run: echo pwd && echo ls
     
     - uses: actions/checkout@v2
+    
+    - run: echo pwd && echo ls
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v1.7.2
       with:
         dotnet-version: 6.0.100-preview.2.21155.3
+        
+    - run: echo pwd && echo ls
         
     - name: publish
       run: cd BlazorPongWasm && dotnet publish -c release
