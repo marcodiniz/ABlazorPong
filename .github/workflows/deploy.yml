@@ -19,7 +19,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1.7.2
       with:
-        dotnet-version: 6.0.0-preview.2.21154.6
+        dotnet-version: SDK 6.0.100-preview.2
         
     - name: publish
       run: cd BlazorPongWasm && dotnet publish -o .\publish -c release
