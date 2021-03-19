@@ -1,7 +1,7 @@
 name: .NET
 
 env:
-  PUBLISH_DIR: publish/wwwroot
+  PUBLISH_DIR: /bin/release/net6.0/wwwroot
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         dotnet-version: 6.0.100-preview.2.21155.3
         
     - name: publish
-      run: cd BlazorPongWasm && dotnet publish -o .\publish -c release
+      run: cd BlazorPongWasm && dotnet publish -c release
       
     - name: Rewrite base href
       uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
