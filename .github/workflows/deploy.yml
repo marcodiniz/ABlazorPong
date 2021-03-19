@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: install zline
+    - name: install zlib
       run: sudo apt install zlib1g
     
     - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1.7.2
       with:
-        dotnet-version: 6.0.100-preview.2
+        dotnet-version: 6.0.100-preview.2.21155.3
         
     - name: publish
       run: cd BlazorPongWasm && dotnet publish -o .\publish -c release
