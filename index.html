@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="og:title" content="Blazor Pong - Classic Pong on browser with WebAssembly.  No javascript, no plugins!">
+    <meta property="og:description" content="An experiment creating a full functional game for browsers with Blazor. Only C#, CSS and HTML. Not a single line of javascript has been writen for this project">
+    <meta property="og:image" content="https://blazorpong.surge.sh/assets/pong2.jpg">
+
+    <title>A Blazor Pong</title>
+    <base href="/ABlazorPong/">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>A Blazor Pong</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="page">
+        <div class="banner">
+            <div class="social">
+                <a href="https://www.linkedin.com/in/dinizmarco/"><img src="assets/logo-linkedin.svg" /></a>
+                <a href="https://github.com/marcodiniz/ABlazorPong"><img src="assets/logo-github.svg" /></a>
+            </div>
+            <div class="logo">
+                BLAZOR-PONG
+            </div>
+        </div>
+        <div class="screen">
+            <div id="app">
+                Click on screen, use ↑, ↓, W or S
+                <br />
+                loading...
+            </div>
+        </div>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-617Z7LZK9Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-617Z7LZK9Q');
+    </script>
+</body>
+
+</html>
