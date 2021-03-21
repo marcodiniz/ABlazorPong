@@ -27,6 +27,9 @@ jobs:
         html_path: ./publish/wwwroot/index.html
         base_href: /ABlazorPong/
         
+    - name: Add .nojekyll file
+      run: touch ./publish//wwwroot/.nojekyll
+        
     - name: GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v1.5.1
