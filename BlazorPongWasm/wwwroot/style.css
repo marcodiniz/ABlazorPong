@@ -8,7 +8,6 @@
     src: url('assets/bygbv76tgbvftr7vg6ty.woff') format("woff"), url("assets/bygbv76tgbvftr7vg6ty.ttf") format("truetype");
 }
 
-
 .page {
     position: absolute;
     top: 0;
@@ -19,6 +18,20 @@
     display: flex;
     flex-flow: column wrap;
 }
+
+#app {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
 
 .touch-panes{
    position: absolute;
@@ -61,11 +74,13 @@
 .bar, .ball {
     background: white;
     position: absolute;
+    margin: auto;
 }
 
 .bar{
     width: 1.5%;
     height: 12%;
+    float:left;
 }
 
 .ball{
@@ -110,7 +125,7 @@
     /*from http://aleclownes.com/2017/02/01/crt-display.html */
     .screen::before {
         content: " ";
-        display: block;
+        /*display: block;*/
         position: absolute;
         top: 0;
         left: 0;
@@ -121,9 +136,10 @@
         background-size: 100% 2px, 3px 100%;
         pointer-events: none;
     }
-
+    
 .screen_logic {
-    position: absolute;
+    clear:both;
+    position: relative;
     width: 100%;
     height: 100%
 }
@@ -164,17 +180,3 @@
         text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
     }
 }
-
-#app {
-    height: 100%;
-    width: 90%;
-    margin: auto;
-    color: white;
-    text-align: center;
-    font-family: monospace;
-    font-size: large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-   

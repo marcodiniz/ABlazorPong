@@ -10,8 +10,14 @@
 
     @foreach (var a in audios)
     {
-        <audio @key=a autoplay src="assets/pong_@(a).wav"></audio>
+    <audio @key=a autoplay src="assets/pong_@(a).wav"></audio>
     }
+
+    <div class="ball" style="@game.Ball.Rect.ToStyle()"></div>
+    <div class="bar" style="@game.BarLeft.Rect.ToStyle()"></div>
+    <div class="bar" style="@game.BarRight.Rect.ToStyle()"></div>
+
+
 
     <div class="line"></div>
 
@@ -20,10 +26,6 @@
         <div>@game.ScorePlayer</div>
     </div>
 
-    <div class="bar" style="@game.BarLeft.Rect.ToStyle()"></div>
-    <div class="bar" style="@game.BarRight.Rect.ToStyle()"></div>
-
-    <div class="ball" style="@game.Ball.Rect.ToStyle()"></div>
 
     <div class="touch-panes">
         <div class="touch-top"
